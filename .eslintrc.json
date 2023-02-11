@@ -12,9 +12,8 @@
     },
     "plugins": ["react", "@typescript-eslint"],
     "rules": {
-        "semi": ["error", "never"],
-        "quotes": ["error", "single"],
-        "jsx-quotes": ["error", "prefer-double"],
+        "quotes": ["warn", "single"],
+        "jsx-quotes": ["warn", "prefer-double"],
         "react/react-in-jsx-scope": "off"
     }
 }
