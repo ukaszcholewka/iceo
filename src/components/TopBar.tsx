@@ -1,8 +1,10 @@
-import { FC, memo, useCallback } from 'react'
+import { FC, useCallback } from 'react'
 import { Avatar, Chip, Grid, Typography } from '@mui/material'
 import { styled } from '@mui/system'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { appStore } from '@/stores/appStore'
+import { userStore } from '@/stores/userStore'
+import { observer } from 'mobx-react-lite'
 
 const GridStyled = styled(Grid)`
     padding: 12px 24px;
@@ -15,6 +17,8 @@ const UserChipStyled = styled(Chip)`
 `
 
 const TopBar: FC = () => {
+    const { email, name, type } = userStore
+
     const openDrawer = useCallback(() => {
         appStore.showDrawer = true
     }, [])
@@ -27,7 +31,7 @@ const TopBar: FC = () => {
             alignItems="center"
         >
             <Grid item>
-                <Chip label="Admin" variant="filled" />
+                <Chip label={type} variant="filled" />
             </Grid>
             <Grid item>
                 <UserChipStyled
@@ -41,10 +45,10 @@ const TopBar: FC = () => {
                                 <Grid container>
                                     <Grid item xs={12}>
                                         <Typography variant="body1">
-                                            Jan Kowalski
+                                            {name}
                                         </Typography>
                                         <Typography variant="body2">
-                                            j.kowalski@gmail.com
+                                            {email}
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -61,4 +65,4 @@ const TopBar: FC = () => {
     )
 }
 
-export default memo(TopBar)
+export default observer(TopBar)

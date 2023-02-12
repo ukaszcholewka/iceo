@@ -17,5 +17,4 @@ class AppStore {
 }
 
 const appStore = new AppStore()
-
 export { appStore }
