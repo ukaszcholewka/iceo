@@ -1,7 +1,7 @@
 import { makeAutoObservable } from 'mobx'
 
 class AppStore {
-    private _showDrawer = true
+    private _showDrawer = false
 
     public constructor() {
         makeAutoObservable(this)

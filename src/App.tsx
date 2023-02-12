@@ -3,6 +3,7 @@ import { observer } from 'mobx-react-lite'
 import { ThemeProvider } from '@mui/material'
 import { GlobalStyle, theme } from '@/styles/GlobalStyle'
 import Menu from '@/components/Menu'
+import { TopBar } from './components'
 
 const App: FC = () => {
     return (
@@ -10,6 +11,7 @@ const App: FC = () => {
             <ThemeProvider theme={theme}>
                 <GlobalStyle />
                 <Menu />
+                <TopBar />
             </ThemeProvider>
         </>
     )

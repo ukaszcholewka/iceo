@@ -1,27 +1,28 @@
 import { createTheme, GlobalStyles } from '@mui/material'
 
-const colors = {
-    primary: '#057680',
-    secondary: '#D26606',
-} as const
-
 let theme = createTheme({
     palette: {
         primary: {
-            main: colors.primary,
+            main: '#057680',
         },
         secondary: {
-            main: colors.secondary,
+            main: '#D26606',
         },
     },
     typography: {
         fontFamily: 'Lexend Deca',
+        body2: {
+            fontWeight: 200,
+        },
     },
+})
+
+theme = createTheme(theme, {
     components: {
         MuiDrawer: {
             styleOverrides: {
                 paper: {
-                    backgroundColor: colors.primary,
+                    backgroundColor: theme.palette.primary.main,
                     border: '2px solid #000',
                     borderRadius: 15,
                     padding: '16px',
@@ -44,19 +45,6 @@ let theme = createTheme({
                         borderRadius: 15,
                         border: '2px solid #000',
                         borderWidth: '2px 4px 4px 2px',
-                    },
-                },
-            },
-        },
-    },
-})
-
-theme = createTheme(theme, {
-    components: {
-        MuiListItemButton: {
-            styleOverrides: {
-                root: {
-                    ':hover': {
                         backgroundColor: theme.palette.secondary.dark,
                     },
                 },

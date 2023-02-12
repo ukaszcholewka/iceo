@@ -1,4 +1,4 @@
-import { FC, ReactNode, useCallback } from 'react'
+import { FC, useCallback } from 'react'
 import { observer } from 'mobx-react-lite'
 import GroupIcon from '@mui/icons-material/Group'
 import {
@@ -9,6 +9,7 @@ import {
     ListItemButton,
     ListItemIcon,
     ListItemText,
+    Typography,
 } from '@mui/material'
 import { appStore } from '@/stores/appStore'
 import { styled } from '@mui/system'
@@ -36,7 +37,8 @@ const Menu: FC = () => {
                 <Box>
                     <Logo alt="" src="https://picsum.photos/100/50" />
                 </Box>
-                <Box>
+                <Box marginTop={6}>
+                    <Typography variant="h6">Zarzadzanie</Typography>
                     <List>
                         {items.map(({ value, Icon }) => (
                             <ListItem key={value}>
