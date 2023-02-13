@@ -1,3 +1,4 @@
+import { Home } from '@/views'
 import { ReactRouter, RootRoute, Route } from '@tanstack/react-router'
 
 const rootRoute = new RootRoute()
@@ -5,7 +6,7 @@ const rootRoute = new RootRoute()
 const indexRoute = new Route({
     path: '/',
     getParentRoute: () => rootRoute,
-    component: () => <div>Home</div>,
+    component: () => <Home />,
 })
 
 const usersRoute = new Route({

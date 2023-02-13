@@ -1,4 +1,4 @@
-import { FC, ReactNode, useCallback } from 'react'
+import { FC, useCallback } from 'react'
 import { observer } from 'mobx-react-lite'
 import GroupIcon from '@mui/icons-material/Group'
 import {
@@ -17,6 +17,7 @@ import { router, RouterPaths } from '@/router'
 
 const Logo = styled('img')`
     border-radius: 15px;
+    cursor: pointer;
 `
 
 type MenuItem = {
@@ -51,7 +52,11 @@ const Menu: FC = () => {
         <Drawer anchor="left" open={showDrawer} onClose={onCloseDrawer}>
             <Box sx={{ width: 250 }}>
                 <Box>
-                    <Logo alt="" src="https://picsum.photos/100/50" />
+                    <Logo
+                        alt=""
+                        onClick={navigateTo('/')}
+                        src="https://picsum.photos/100/50"
+                    />
                 </Box>
                 <Box marginTop={6}>
                     <Typography variant="h6">Zarzadzanie</Typography>
