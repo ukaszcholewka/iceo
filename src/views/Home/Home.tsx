@@ -104,10 +104,11 @@ const Home: FC = () => {
             .filter(({ balanceType }) =>
                 type === 'ALL' ? true : balanceType === type
             )
-    }, [type, rows])
+    }, [type, rows, time])
 
     return (
         <DataTable
+            x={columns.length}
             columns={columns}
             rows={filtered}
             label={
