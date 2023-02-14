@@ -50,6 +50,15 @@ theme = createTheme(theme, {
                 },
             },
         },
+        MuiCard: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: theme.palette.primary.main,
+                    border: '2px solid #000',
+                    borderRadius: 15,
+                },
+            },
+        },
     },
 })
 

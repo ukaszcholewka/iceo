@@ -1,6 +1,6 @@
 import { Card, Grid } from '@mui/material'
 import { GridColDef } from '@mui/x-data-grid'
-import { FC, Fragment, memo, ReactNode } from 'react'
+import { FC, memo, ReactNode } from 'react'
 
 import { Box, styled } from '@mui/system'
 import { theme } from '@/styles/GlobalStyle'
