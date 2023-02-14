@@ -1,4 +1,4 @@
-import { Home } from '@/views'
+import { Home, Users } from '@/views'
 import { ReactRouter, RootRoute, Route } from '@tanstack/react-router'
 
 const rootRoute = new RootRoute()
@@ -12,7 +12,7 @@ const indexRoute = new Route({
 const usersRoute = new Route({
     path: '/users',
     getParentRoute: () => rootRoute,
-    component: () => <div>Users</div>,
+    component: () => <Users />,
 })
 
 const currencyRoute = new Route({
