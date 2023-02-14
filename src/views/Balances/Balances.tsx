@@ -27,7 +27,7 @@ const TIME_OPTIONS = [7, 30, 90]
 const BALANCE_OPTIONS: BalanceType[] = ['ADMIN', 'SYSTEM', 'USER', 'ALL']
 const DAY = 1000 * 60 * 60 * 24
 
-const Home: FC = () => {
+const Balances: FC = () => {
     const [time, setTime] = useState(0)
     const [type, setType] = useState<BalanceType>('ALL')
     const parsetBalance = localApiStore.getParsedBalance()
@@ -64,9 +64,8 @@ const Home: FC = () => {
     const parseCurrency = useCallback(
         (funds: string, precision: number) =>
             Array.from(funds).reduce(
-                (acc, curr, index, arr) =>
-                    (acc +=
-                        arr.length - index === precision ? '.' + curr : curr),
+                (acc, curr, i, arr) =>
+                    (acc += arr.length - i === precision ? '.' + curr : curr),
                 ''
             ),
         []
@@ -79,7 +78,7 @@ const Home: FC = () => {
             { field: 'fundsAvailable', headerName: 'Founds' },
             { field: 'balanceType', headerName: 'Type' },
         ],
-        [parsetBalance]
+        []
     )
 
     const rows = useMemo(
@@ -161,4 +160,4 @@ const Home: FC = () => {
     )
 }
 
-export default observer(Home)
+export default observer(Balances)
