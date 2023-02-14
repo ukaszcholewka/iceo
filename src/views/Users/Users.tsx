@@ -9,8 +9,8 @@ const Users: FC = () => {
 
     const columns: GridColDef[] = useMemo(
         () => [
-            { field: 'userId', headerName: 'User ID', width: 180 },
-            { field: 'userName', headerName: 'Name', width: 120 },
+            { field: 'userId', headerName: 'User ID' },
+            { field: 'userName', headerName: 'Name' },
         ],
         []
     )

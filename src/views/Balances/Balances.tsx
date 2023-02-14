@@ -74,10 +74,10 @@ const Home: FC = () => {
 
     const columns: GridColDef[] = useMemo(
         () => [
-            { field: 'createdAtParsed', headerName: 'Created At', width: 180 },
-            { field: 'userName', headerName: 'User Name', width: 200 },
-            { field: 'fundsAvailable', headerName: 'Founds', width: 280 },
-            { field: 'balanceType', headerName: 'Type', width: 120 },
+            { field: 'createdAtParsed', headerName: 'Created At' },
+            { field: 'userName', headerName: 'User Name' },
+            { field: 'fundsAvailable', headerName: 'Founds' },
+            { field: 'balanceType', headerName: 'Type' },
         ],
         [parsetBalance]
     )

@@ -9,9 +9,9 @@ const Currencies: FC = () => {
 
     const columns: GridColDef[] = useMemo(
         () => [
-            { field: 'currencyId', headerName: 'ID', width: 180 },
-            { field: 'currencyName', headerName: 'Name', width: 120 },
-            { field: 'precision', headerName: 'Precision', width: 120 },
+            { field: 'currencyId', headerName: 'ID' },
+            { field: 'currencyName', headerName: 'Name' },
+            { field: 'precision', headerName: 'Precision' },
         ],
         []
     )
