@@ -64,11 +64,11 @@ class LocalApiStore {
                 )?.userName || item.userId,
             currencyName:
                 currencies.data.data.collection.find(
-                    (currency) => (item.currencyId = currency.currencyId)
+                    (currency) => item.currencyId === currency.currencyId
                 )?.currencyName || item.currencyId,
             precision:
                 currencies.data.data.collection.find(
-                    (currency) => (item.currencyId = currency.currencyId)
+                    (currency) => item.currencyId === currency.currencyId
                 )?.precision || 0,
         }))
     }
