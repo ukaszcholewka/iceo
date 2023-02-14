@@ -4,7 +4,7 @@ import { observer } from 'mobx-react-lite'
 import { DataTable } from '@/components'
 import localApiStore from '@/stores/localApiStore'
 
-const Home: FC = () => {
+const Users: FC = () => {
     const rows = localApiStore.users.data?.data.collection || []
 
     const columns: GridColDef[] = useMemo(
@@ -15,7 +15,7 @@ const Home: FC = () => {
         []
     )
 
-    return <DataTable x={columns.length} columns={columns} rows={rows} />
+    return <DataTable columns={columns} rows={rows} />
 }
 
-export default observer(Home)
+export default observer(Users)

@@ -16,7 +16,7 @@ const Currencies: FC = () => {
         []
     )
 
-    return <DataTable x={columns.length} columns={columns} rows={rows} />
+    return <DataTable columns={columns} rows={rows} />
 }
 
 export default observer(Currencies)

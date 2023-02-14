@@ -108,7 +108,6 @@ const Home: FC = () => {
 
     return (
         <DataTable
-            x={columns.length}
             columns={columns}
             rows={filtered}
             label={

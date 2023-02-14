@@ -9,7 +9,7 @@ interface BoxTableProps {
     x: number
 }
 
-interface DataTableProps extends BoxTableProps {
+interface DataTableProps {
     rows: Record<string, string | number>[]
     columns: GridColDef[]
     label?: ReactNode
@@ -70,7 +70,7 @@ const Cell: FC<CellProps> = ({ title, value }) => {
     )
 }
 
-const DataTable: FC<DataTableProps> = ({ rows, columns, label, x }) => {
+const DataTable: FC<DataTableProps> = ({ rows, columns, label }) => {
     return (
         <Grid container>
             {label && (
@@ -79,7 +79,7 @@ const DataTable: FC<DataTableProps> = ({ rows, columns, label, x }) => {
                 </Grid>
             )}
             <Grid item xs={12}>
-                <BoxTable x={x}>
+                <BoxTable x={columns.length}>
                     {columns.map(({ headerName }) => (
                         <BoxCell header key={headerName}>
                             {headerName}
